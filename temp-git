@@ -1,0 +1,51 @@
+Initial Commit
+
+TODO:
+  Router
+  Server
+  Data Model
+  Views:
+    Charity:           CRUD
+    Charity Volunteer: CRUD
+    Charity Admin:     CRUD
+    User:              CRUD
+    Donation:          CR
+    Donation Profile:  CRUD
+    Social Media:       R
+    FAQ:                R
+  Create List of Houston Charities:
+    To perform intake
+    To perform marketing
+  Contact 
+    Videographers
+    Photographers
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+#
+# Initial commit
+#
+# Changes to be committed:
+#	new file:   css/base.css
+#	new file:   index.html
+#	new file:   react-slim/assets/hamburger.jpg
+#	new file:   react-slim/assets/lasagna.jpg
+#	new file:   react-slim/assets/raven-call.jpg
+#	new file:   react-slim/assets/tacos.jpg
+#	new file:   react-slim/css/base.css
+#	new file:   react-slim/index.html
+#	new file:   react-slim/scripts/app.js
+#	new file:   react-slim/scripts/header.js
+#	new file:   react-slim/scripts/info.js
+#	new file:   react-slim/scripts/map-box.js
+#	new file:   react-slim/scripts/menu-bar.js
+#	new file:   react-slim/scripts/message.js
+#	new file:   react-slim/scripts/picture.js
+#	new file:   scripts/actions.js
+#	new file:   scripts/app.js
+#	new file:   scripts/footer.js
+#	new file:   scripts/header.js
+#	new file:   scripts/info.js
+#	new file:   scripts/media.js
+#
