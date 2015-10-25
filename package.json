@@ -15,5 +15,8 @@
   "license": "GPL-3.0",
   "devDependencies": {
     "http-server": "^0.8.5"
+  },
+  "dependencies": {
+    "director": "^1.2.8"
   }
 }
