@@ -1,0 +1,7 @@
+#!/bin/bash
+
+path=${PWD}
+
+rm -r "$path/vendor/"
+mkdir "$path/vendor/"
+cp "$path/node_modules/director/build/director.min.js" "$path/vendor/"
