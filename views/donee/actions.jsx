@@ -1,4 +1,4 @@
-var Actions = React.createClass({
+Donee.Actions = React.createClass({
   render: function() {
     return (
       <div className="actions">

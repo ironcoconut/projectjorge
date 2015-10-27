@@ -2,7 +2,6 @@
 <html>
   <head>
     <title>Jorge Bergoglio | Project Jorge</title>
-    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css" />
     <link rel="stylesheet" href="css/base.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.0/react.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.0/JSXTransformer.js"></script>
@@ -10,11 +9,24 @@
   </head>
   <body>
     <div id="bodycontainer"></div>
-    <script type="text/jsx;harmony=true" src="views/footer.jsx"></script>
-    <script type="text/jsx;harmony=true" src="views/actions.jsx"></script>
-    <script type="text/jsx;harmony=true" src="views/info.jsx"></script>
-    <script type="text/jsx;harmony=true" src="views/media.jsx"></script>
-    <script type="text/jsx;harmony=true" src="views/header.jsx"></script>
-    <script type="text/jsx;harmony=true" src="views/app.jsx"></script>
+    <script src="vendor/director.min.js"></script>
+
+    <!-- donee -->
+    <script type="text/jsx;harmony=true" src="views/donee/index.jsx"></script>
+    <script type="text/jsx;harmony=true" src="views/donee/footer.jsx"></script>
+    <script type="text/jsx;harmony=true" src="views/donee/actions.jsx"></script>
+    <script type="text/jsx;harmony=true" src="views/donee/info.jsx"></script>
+    <script type="text/jsx;harmony=true" src="views/donee/media.jsx"></script>
+    <script type="text/jsx;harmony=true" src="views/donee/header.jsx"></script>
+
+    <!-- faq -->
+    <script type="text/jsx;harmony=true" src="views/faq/index.jsx"></script>
+    <script type="text/jsx;harmony=true" src="views/faq/footer.jsx"></script>
+    <script type="text/jsx;harmony=true" src="views/faq/actions.jsx"></script>
+    <script type="text/jsx;harmony=true" src="views/faq/info.jsx"></script>
+    <script type="text/jsx;harmony=true" src="views/faq/media.jsx"></script>
+    <script type="text/jsx;harmony=true" src="views/faq/header.jsx"></script>
+
+    <script type="text/jsx;harmony=true" src="js/app.jsx"></script>
   </body>
 </html>

@@ -1,4 +1,4 @@
-var Media = React.createClass({
+Donee.Media = React.createClass({
   resizeIframe: function() {
     var height = $('.media').width() * (9/16);
 

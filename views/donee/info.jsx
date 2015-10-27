@@ -1,4 +1,4 @@
-var Info = React.createClass({
+Donee.Info = React.createClass({
   getInitialState: function() {
     return { 
       showResults: false,
@@ -15,13 +15,13 @@ var Info = React.createClass({
     return (
       <div className="info">
         <p onClick={this.onClick}>Meet Jorge. He needs your help. He has been homeless since he was 19. <a href="#">{this.state.moreLess}.</a></p>
-        <MoreInfo show={this.state.showResults} />
+        <Donee.MoreInfo show={this.state.showResults} />
       </div>
     );
   }
 });
 
-var MoreInfo = React.createClass({
+Donee.MoreInfo = React.createClass({
   render: function () {
     return (
       <div className={this.props.show ? '' : 'hidden'}>

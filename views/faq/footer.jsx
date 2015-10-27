@@ -1,8 +1,8 @@
-var Footer = React.createClass({
+Faq.Footer = React.createClass({
   render: function() {
     return (
       <div className="footer">
-        <a href="#">FAQ</a>
+        <a href="#">Support</a>
         <span> - </span>
         <a href="#">Volunteer</a>
         <span> - </span>
