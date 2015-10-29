@@ -1,13 +1,13 @@
 var routes = {
   '/': function(){
     React.render(
-      <Donee />, 
+      <Index url="mock_data/donee.json" />, 
       document.getElementById("bodycontainer")
     );
   },
   '/faq': function(){
     React.render(
-      <Faq />, 
+      <Index url="mock_data/faq.json" />, 
       document.getElementById("bodycontainer")
     );
   }

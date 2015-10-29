@@ -1,29 +1,29 @@
 {
-  actions: {
-    primary_button: {
-      title: "Donate",
-      subtitle: "$1573 of $2000 per month raised"
+  "actions": {
+    "primary_button": {
+      "title": "Donate",
+      "subtitle": "$1573 of $2000 per month raised"
     },
-    secondary_button: {
-      title: "Support",
-      subtitle: "Share Jorge's story."
+    "secondary_button": {
+      "title": "Support",
+      "subtitle": "Share Jorge's story."
     },
-    skip_button: {
-      title: "Skip"
+    "skip_button": {
+      "title": "Skip"
     }
   },
-  footer: {
-    exclude: "Support"
+  "footer": {
+    "exclude": "Support"
   },
-  header: {
-    title: "meet jorge bergoglio",
-    subtitle: "father, brother, lover of the tango"
+  "header": {
+    "title": "meet jorge bergoglio",
+    "subtitle": "father, brother, lover of the tango"
   },
-  info: {
-    summary: "meet jorge bergoglio",
-    content: "<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.</p>"
+  "info": {
+    "summary": "Meet Jorge Bergoglio.",
+    "content": "<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.</p>"
   },
-  media: {
-    url: "https://www.youtube.com/embed/6WhLwWNnf3o"
+  "media": {
+    "url": "https://www.youtube.com/embed/40yYoQBkKpY"
   }
 }
