@@ -1,0 +1,26 @@
+{
+  actions: {
+    primary_button: {
+      title: "Help Your Neighbors",
+      subtitle: "23 Homeless in Houston need help."
+    },
+    secondary_button: {
+      title: "Help Local Charities",
+      subtitle: "7 Houston Charities Need Volunteers."
+    }
+  },
+  footer: {
+    exclude: "Faq"
+  },
+  header: {
+    title: "FAQ",
+    subtitle: "about our mission and inspiration"
+  },
+  info: {
+    summary: "Inspired by the Pope, but human at it core.",
+    content: "<p>Our goal is to end homelessness in Houston.</p><p>We will accomplish this by using techonology to bring people together.</p><p>By lifting up our fellow men and women, we shall together rise.</p>"
+  },
+  media: {
+    url: "https://www.youtube.com/embed/6WhLwWNnf3o"
+  }
+}
