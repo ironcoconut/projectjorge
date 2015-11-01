@@ -4,6 +4,7 @@
       var load_json = this.load_json,
           router = Router({
             '/': load_json.bind(this, "mock_data/donee.json"),
+            '/volunteer': load_json.bind(this, "mock_data/volunteer.json"),
             '/faq': load_json.bind(this, "mock_data/faq.json")
           });
       router.init('/');
