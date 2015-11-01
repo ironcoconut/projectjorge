@@ -15,7 +15,6 @@
         dataType: 'json',
         cache: false,
         success: function(data) {
-          console.log('data: ', data);
           this.setState(data);
         }.bind(this),
         error: function(xhr, status, err) {
@@ -25,11 +24,11 @@
     },
     render: function() {
       return React.createElement('div', {className: 'container'},
-               PJ.render('header', this.state),
-               PJ.render('media', this.state),
-               PJ.render('info', this.state),
-               PJ.render('actions', this.state),
-               PJ.render('footer', this.state)
+               PJ.render_property('header', this.state),
+               PJ.render_property('media', this.state),
+               PJ.render_property('info', this.state),
+               PJ.render_property('actions', this.state),
+               PJ.render_property('footer', this.state)
              );
     }
   });
