@@ -9,10 +9,11 @@ var Index = React.createClass({
   },
   load_json: function (url) {
     $.ajax({
-      url: this.props.url,
+      url: url,
       dataType: 'json',
       cache: false,
       success: function(data) {
+        console.log('data: ', data);
         this.setState(data);
       }.bind(this),
       error: function(xhr, status, err) {
