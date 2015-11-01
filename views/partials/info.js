@@ -24,10 +24,7 @@
                          this.props.summary + ' ', 
                          React.createElement('a', {href: ""}, this.state.moreLess)
                        ),
-                       React.createElement(
-                         PJ.elements['more_info'], 
-                         {show: this.state.showResults, content: this.props.content}
-                       )
+                       PJ.render_object('more_info', {show: this.state.showResults, content: this.props.content})
                      ];
 
       return React.createElement('div', {className: "info"}, children);
@@ -35,21 +32,4 @@
   });
 
   PJ.register('info', Info);
-
-  var MoreInfo = React.createClass({
-    render: function () {
-      var attributes = {
-                         className: this.props.show ? '' : 'hidden', 
-                         dangerouslySetInnerHTML: set_html(this.props.content)
-                       };
-
-      function set_html (content) {
-        return {__html: content};
-      }
-
-      return React.createElement('div', attributes);
-    }
-  });
-
-  PJ.register('more_info', MoreInfo);
 })();
