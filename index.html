@@ -9,17 +9,27 @@
   </head>
   <body>
     <div id="bodycontainer"></div>
+
+    <!-- vendor -->
     <script src="vendor/director.min.js"></script>
-    <script src="js/pj.js"></script>
 
     <!-- common components-->
-    <script type="text/jsx;harmony=true" src="views/index.jsx"></script>
-    <script type="text/jsx;harmony=true" src="views/common/footer.jsx"></script>
-    <script type="text/jsx;harmony=true" src="views/common/actions.jsx"></script>
-    <script type="text/jsx;harmony=true" src="views/common/info.jsx"></script>
-    <script type="text/jsx;harmony=true" src="views/common/media.jsx"></script>
-    <script type="text/jsx;harmony=true" src="views/common/header.jsx"></script>
+    <script src="js/pj.js"></script>
 
-    <script type="text/jsx;harmony=true" src="js/app.jsx"></script>
+    <!-- common views -->
+    <script src="views/index.js"></script>
+    <script src="views/common/footer.js"></script>
+    <script src="views/common/actions.js"></script>
+    <script src="views/common/info.js"></script>
+    <script src="views/common/media.js"></script>
+    <script src="views/common/header.js"></script>
+
+    <!-- load app -->
+    <script>
+      React.render(
+        React.createElement(PJ.elements['index']), 
+        document.getElementById("bodycontainer")
+      );
+    </script>
   </body>
 </html>
