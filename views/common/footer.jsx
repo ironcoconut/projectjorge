@@ -1,21 +1,23 @@
-var Footer = React.createClass({
-  render: function() {
-    var exclude = this.props.exclude,
-        items = ['FAQ', 'Support', 'Volunteer', 'Join', 'Charities'],
-        index = items.indexOf(exclude),
-        children = [];
-    
-    var spliced_items = items.splice(index, 1);
-    items.forEach(function (item, i) {
-      children.push(React.createElement('a', {href: '#/' + item.toLowerCase()}, item));
+(function() { 
+  var Footer = React.createClass({
+    render: function() {
+      var exclude = this.props.exclude,
+          items = ['FAQ', 'Support', 'Volunteer', 'Join', 'Charities'],
+          index = items.indexOf(exclude),
+          children = [];
       
-      if (i < items.length - 1) {
-        children.push(React.createElement('span', null, ' - '));
-      }
-    });
+      var spliced_items = items.splice(index, 1);
+      items.forEach(function (item, i) {
+        children.push(React.createElement('a', {href: '#/' + item.toLowerCase()}, item));
+        
+        if (i < items.length - 1) {
+          children.push(React.createElement('span', null, ' - '));
+        }
+      });
 
-    return React.createElement('div', {className: "footer"}, children);
-  }
-});
+      return React.createElement('div', {className: "footer"}, children);
+    }
+  });
 
-PJ.register('footer', Footer);
+  PJ.register('footer', Footer);
+})();
