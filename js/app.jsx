@@ -1,4 +1,4 @@
-    React.render(
-      <Index />, 
-      document.getElementById("bodycontainer")
-    );
+React.render(
+  <Index />, 
+  document.getElementById("bodycontainer")
+);
