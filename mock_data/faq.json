@@ -1,10 +1,18 @@
 {
   "actions": {
     "primary_button": {
+      "attributes": {
+        "className": "center button blue",
+        "href": "#"
+      },
       "title": "Help Your Neighbors",
       "subtitle": "23 Homeless in Houston need help."
     },
     "secondary_button": {
+      "attributes": {
+        "className": "center button green",
+        "href": "#"
+      },
       "title": "Help Local Charities",
       "subtitle": "7 Houston Charities Need Volunteers."
     }

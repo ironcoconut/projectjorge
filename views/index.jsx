@@ -1,21 +1,18 @@
 var Index = React.createClass({
-  getInitialState: function() {
-    return {
-      header: null,
-      media: null,
-      info: null,
-      actions: null,
-      footer: null,
-      ready: false
-    };
-  },
   componentDidMount: function() {
+    var load_json = this.load_json,
+        router = Router({
+          '/': load_json.bind(this, "mock_data/donee.json"),
+          '/faq': load_json.bind(this, "mock_data/faq.json")
+        });
+    router.init('/');
+  },
+  load_json: function (url) {
     $.ajax({
       url: this.props.url,
       dataType: 'json',
       cache: false,
       success: function(data) {
-        data.ready = true;
         this.setState(data);
       }.bind(this),
       error: function(xhr, status, err) {
@@ -24,18 +21,12 @@ var Index = React.createClass({
     });
   },
   render: function() {
-    if (this.state.ready) {
-      return (
-        <div className="container">
-          <Header data={this.state.header} />
-          <Media data={this.state.media} />
-          <Info data={this.state.info} />
-          <Actions data={this.state.actions} />
-          <Footer data={this.state.footer} />
-        </div>
-      );
-    } else {
-      return (<div className="container">Loading...</div>);
-    }
+    return React.createElement('div', {className: 'container'},
+             PJ.render('header', this.state),
+             PJ.render('media', this.state),
+             PJ.render('info', this.state),
+             PJ.render('actions', this.state),
+             PJ.render('footer', this.state)
+           );
   }
 });

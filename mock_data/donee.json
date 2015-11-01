@@ -1,14 +1,26 @@
 {
   "actions": {
     "primary_button": {
+      "attributes": {
+        "className": "center button blue",
+        "href": "#"
+      },
       "title": "Donate",
       "subtitle": "$1573 of $2000 per month raised"
     },
     "secondary_button": {
+      "attributes": {
+        "className": "center button green",
+        "href": "#"
+      },
       "title": "Support",
       "subtitle": "Share Jorge's story."
     },
     "skip_button": {
+      "attributes": {
+        "className": "center button grey",
+        "href": "#"
+      },
       "title": "Skip"
     }
   },

@@ -13,5 +13,5 @@ var routes = {
   }
 };
 
-var router = Router(routes)
+var router = Router(routes);
 router.init('/');

@@ -1,6 +1,6 @@
 var Footer = React.createClass({
   render: function() {
-    var exclude = this.props.data.exclude,
+    var exclude = this.props.exclude,
         items = ['FAQ', 'Support', 'Volunteer', 'Join', 'Charities'],
         html = [];
     
@@ -10,13 +10,12 @@ var Footer = React.createClass({
       }
     });
     
-        console.log(html);
     function set_html () {
       return {__html: html.join('<span> - </span>')};
     }
 
-    return (
-      <div className="footer" dangerouslySetInnerHTML={set_html()} />
-    );
+    return React.createElement('div', {className: "footer", dangerouslySetInnerHTML: set_html()});
   }
 });
+
+PJ.register('footer', Footer);

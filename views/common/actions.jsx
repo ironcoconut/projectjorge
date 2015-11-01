@@ -1,50 +1,35 @@
 var Actions = React.createClass({
   render: function() {
-    var primary = this.props.data.primary_button,
-        secondary = this.props.data.secondary_button,
-        skip = this.props.data.skip;
+    console.log('Action props: ', this.props);
+    var props = this.props,
+        buttons = ['primary_button', 'secondary_button', 'skip_button'],
+        children = [];
 
-        console.log(primary);
-    return (
-      <div className="actions">
-        <Button data={primary} color='blue' />
-        <Button data={secondary} color='green' />
-        <Button data={skip} color='gray' />
-      </div>
-    );
+    buttons.forEach(function(name) {
+      var data = props[name];
+
+      if (data) {
+        children.push(React.createElement(PJ.elements['button'], data));
+      }
+    });
+
+    return React.createElement('div', {className: "actions"}, children);
   }
 });
+
+PJ.register('actions', Actions);
 
 var Button = React.createClass({
   render: function() {
-    if(this.props.data) {
-      var classes = "button tall " + this.props.color;
+    var children = [ React.createElement('strong', null, this.props.title) ];
 
-      return (
-        <a href="#" className={classes}>
-          <div className="center">
-            <strong>{this.props.data.title}</strong>
-            <ButtonSubtitle subtitle={this.props.data.subtitle} />
-          </div>
-        </a>
-      );
-    } else {
-      return (<span />);
+    if (this.props.subtitle) {
+      children.push(React.createElement('br'));
+      children.push(React.createElement('span', null, this.props.subtitle));
     }
+
+    return React.createElement('a', this.props.attributes, children);
   }
 });
 
-var ButtonSubtitle = React.createClass({
-  render: function() {
-    if(this.props.subtitle) {
-      return (
-        <span>
-          <br />
-          {this.props.subtitle}
-        </span>
-      );
-    } else {
-      return (<span />);
-    }
-  }
-});
+PJ.register('button', Button);

@@ -10,10 +10,10 @@ var Media = React.createClass({
     window.addEventListener('resize', this.resizeIframe);
   },
   render: function() {
-    return (
-      <div >
-        <iframe className="media" width="100%" src={this.props.data.url} frameBorder="0" allowFullScreen></iframe>
-      </div>
-    );
+    return React.createElement('div', null,
+             React.createElement('iframe', {className: "media", width: "100%", src: this.props.url, frameBorder: "0", allowFullScreen: true})
+           );
   }
 });
+
+PJ.register('media', Media);
