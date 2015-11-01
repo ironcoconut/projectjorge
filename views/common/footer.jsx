@@ -2,19 +2,19 @@ var Footer = React.createClass({
   render: function() {
     var exclude = this.props.exclude,
         items = ['FAQ', 'Support', 'Volunteer', 'Join', 'Charities'],
-        html = [];
+        index = items.indexOf(exclude),
+        children = [];
     
-    items.forEach(function (item) {
-      if (exclude != item) {
-        html.push("<a href='#/" + item.toLowerCase() + "'>" + item + "</a>");
+    var spliced_items = items.splice(index, 1);
+    items.forEach(function (item, i) {
+      children.push(React.createElement('a', {href: '#/' + item.toLowerCase()}, item));
+      
+      if (i < items.length - 1) {
+        children.push(React.createElement('span', null, ' - '));
       }
     });
-    
-    function set_html () {
-      return {__html: html.join('<span> - </span>')};
-    }
 
-    return React.createElement('div', {className: "footer", dangerouslySetInnerHTML: set_html()});
+    return React.createElement('div', {className: "footer"}, children);
   }
 });
 
