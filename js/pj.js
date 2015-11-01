@@ -20,7 +20,7 @@ var PJ = {
   },
   render_object: function(name, object) {
     return object ? 
-      React.createElement(this.elements[name], object[name]) : 
+      React.createElement(this.elements[name], object) : 
       React.createElement('span');
   }
 };
