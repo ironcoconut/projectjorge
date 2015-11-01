@@ -8,10 +8,10 @@
       
       var spliced_items = items.splice(index, 1);
       items.forEach(function (item, i) {
-        children.push(React.createElement('a', {href: '#/' + item.toLowerCase()}, item));
+        children.push(React.createElement('a', {href: '#/' + item.toLowerCase(), key: item}, item));
         
         if (i < items.length - 1) {
-          children.push(React.createElement('span', null, ' - '));
+          children.push(React.createElement('span', {key: item + "-span"}, ' - '));
         }
       });
 

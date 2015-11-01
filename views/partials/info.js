@@ -20,14 +20,14 @@
     render: function() {
       var children = [ React.createElement(
                          'p', 
-                         {onClick: this.onClick}, 
+                         {onClick: this.onClick, key: "summary"}, 
                          this.props.summary + ' ', 
                          React.createElement('a', {href: ""}, this.state.moreLess)
                        ),
-                       PJ.render_object('more_info', {show: this.state.showResults, content: this.props.content})
+                       PJ.render_object('more_info', {show: this.state.showResults, content: this.props.content}, 'more_info')
                      ];
 
-      return React.createElement('div', {className: "info"}, children);
+      return React.createElement('div', {className: "info", key: 'info'}, children);
     }
   });
 

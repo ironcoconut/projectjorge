@@ -1,7 +1,6 @@
 (function() {
   var Actions = React.createClass({
     render: function() {
-      console.log('Action props: ', this.props);
       var props = this.props,
           buttons = ['primary_button', 'secondary_button', 'skip_button'],
           children = [];
@@ -10,7 +9,7 @@
         var data = props[name];
 
         if (data) {
-          children.push(PJ.render_object('button', data));
+          children.push(PJ.render_object('button', data, name));
         }
       });
 

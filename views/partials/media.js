@@ -12,7 +12,7 @@
     },
     render: function() {
       return React.createElement('div', null,
-               React.createElement('iframe', {className: "media", width: "100%", src: this.props.url, frameBorder: "0", allowFullScreen: true})
+               React.createElement('iframe', {className: "media", width: "100%", src: this.props.url, frameBorder: "0", allowFullScreen: true, key: 'iframe'})
              );
     }
   });
