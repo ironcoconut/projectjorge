@@ -5,6 +5,8 @@
           router = Router({
             '/': load_json.bind(this, "mock_data/donee.json"),
             '/volunteer': load_json.bind(this, "mock_data/volunteer.json"),
+            '/charities': load_json.bind(this, "mock_data/charity.json"),
+            '/join': load_json.bind(this, "mock_data/join.json"),
             '/faq': load_json.bind(this, "mock_data/faq.json")
           });
       router.init('/');

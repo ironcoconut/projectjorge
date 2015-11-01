@@ -1,0 +1,32 @@
+{
+  "actions": {
+    "primary_button": {
+      "attributes": {
+        "className": "center button blue",
+        "href": "#/join"
+      },
+      "title": "Create Name Form"
+    },
+    "secondary_button": {
+      "attributes": {
+        "className": "center button green",
+        "href": "#/join"
+      },
+      "title": "More info"
+    },
+    "skip_button": {
+      "attributes": {
+        "className": "center button gray",
+        "href": "#/join"
+      },
+      "title": "Enter button for fake form"
+    }
+  },
+  "footer": {
+    "exclude": "Join"
+  },
+  "header": {
+    "title": "Create an Account",
+    "subtitle": "share good will with humankind"
+  }
+}
