@@ -1,0 +1,27 @@
+{
+  "actions": {
+    "primary_button": {
+      "attributes": {
+        "className": "center button blue",
+        "href": "#/charities/marys-charity"
+      },
+      "title": "Mary's Charity",
+      "subtitle": "Doing God's work."
+    },
+    "secondary_button": {
+      "attributes": {
+        "className": "center button green",
+        "href": "#/charities/marys-charity"
+      },
+      "title": "Milams",
+      "subtitle": "Homes for the Needy"
+    }
+  },
+  "footer": {
+    "exclude": "Charities"
+  },
+  "header": {
+    "title": "Charities",
+    "subtitle": "who's helping to end homelessness"
+  }
+}

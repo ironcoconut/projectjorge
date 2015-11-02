@@ -1,0 +1,27 @@
+{
+  "actions": {
+    "primary_button": {
+      "attributes": {
+        "className": "center button blue",
+        "href": "#/volunteer/marys-charity"
+      },
+      "title": "Case Worker",
+      "subtitle": "United Way"
+    },
+    "secondary_button": {
+      "attributes": {
+        "className": "center button gray",
+        "href": "#/volunteer/marys-charity"
+      },
+      "title": "Intake Worker",
+      "subtitle": "St. Mary's"
+    }
+  },
+  "footer": {
+    "exclude": "Volunteer"
+  },
+  "header": {
+    "title": "Volunteer Positions",
+    "subtitle": "lend a helping hand"
+  }
+}

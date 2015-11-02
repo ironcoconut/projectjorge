@@ -2,7 +2,7 @@
   var Footer = React.createClass({
     render: function() {
       var exclude = this.props.exclude,
-          items = ['FAQ', 'Support', 'Volunteer', 'Join', 'Charities'],
+          items = ['FAQ', 'Donate', 'Volunteer', 'Join', 'Charities'],
           index = items.indexOf(exclude),
           children = [];
       
