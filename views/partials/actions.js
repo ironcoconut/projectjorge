@@ -9,7 +9,7 @@
         var data = props[name];
 
         if (data) {
-          children.push(PJ.render_object('button', data, name));
+          children.push(PJ.render_object(data.type, data, name));
         }
       });
 

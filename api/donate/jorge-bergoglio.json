@@ -5,6 +5,7 @@
         "className": "center button blue",
         "href": "#"
       },
+      "type": "payment_button",
       "title": "Donate",
       "subtitle": "$1573 of $2000 per month raised"
     },
@@ -13,6 +14,7 @@
         "className": "center button green",
         "href": "#"
       },
+      "type": "link_button",
       "title": "Support",
       "subtitle": "Share Jorge's story."
     },
@@ -21,6 +23,7 @@
         "className": "center button grey",
         "href": "#"
       },
+      "type": "link_button",
       "title": "Skip"
     }
   },
