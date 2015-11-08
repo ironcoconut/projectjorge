@@ -7,17 +7,30 @@
     "exclude": "Volunteer"
   },
   "form": {
-    "attributes": {
-      "className": "",
-      "submit_url": "api/volunteer/marys-charity/signup"
-    },
+    "submit_url": "api/volunteer/marys-charity/signup",
     "elements": [
       {
         "label": "Your full name",
-        "input": {
+        "attributes": {
           "type": "text",
           "placeholder": "Name",
           "ref": "name"
+        }
+      },
+      {
+        "label": "Your email address.",
+        "attributes": {
+          "type": "text", 
+          "placeholder": "Email", 
+          "ref": "email"
+        }
+      },
+      {
+        "label": "Your phone number.",
+        "attributes": {
+          "type": "text", 
+          "placeholder": "Phone", 
+          "ref": "phone"
         }
       }
     ]
