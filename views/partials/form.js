@@ -3,9 +3,11 @@
     handleSubmit: function (e) {
       e.preventDefault();
 
-      var refs = this.refs;
+      var refs = this.refs,
+          name = this.refs.name.getDOMNode().value ? ' ' + this.refs.name.getDOMNode().value : '';
 
       console.log('Submit: ' + this.props.submit_url);
+      alert(this.props.message + name + ".");
 
       this.props.elements.forEach(function(element) {
         var ref = element.attributes.ref;

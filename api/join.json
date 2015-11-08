@@ -1,32 +1,63 @@
 {
-  "actions": {
-    "primary_button": {
-      "attributes": {
-        "className": "center button blue",
-        "href": "#/join"
-      },
-      "title": "Create Name Form"
-    },
-    "secondary_button": {
-      "attributes": {
-        "className": "center button green",
-        "href": "#/join"
-      },
-      "title": "More info"
-    },
-    "skip_button": {
-      "attributes": {
-        "className": "center button gray",
-        "href": "#/join"
-      },
-      "title": "Enter button for fake form"
-    }
-  },
   "footer": {
     "exclude": "Join"
   },
   "header": {
     "title": "Create an Account",
     "subtitle": "share good will with humankind"
+  },
+  "form": {
+    "submit_url": "api/volunteer/marys-charity/signup",
+    "message": "Thank you for joining",
+    "elements": [
+      {
+        "label": "Your full name",
+        "attributes": {
+          "type": "text",
+          "placeholder": "Name",
+          "ref": "name"
+        }
+      },
+      {
+        "label": "Password",
+        "attributes": {
+          "type": "text",
+          "placeholder": "Password",
+          "ref": "password"
+        }
+      },
+      {
+        "label": "Your email address.",
+        "attributes": {
+          "type": "text", 
+          "placeholder": "Email", 
+          "ref": "email"
+        }
+      },
+      {
+        "label": "Your phone number.",
+        "attributes": {
+          "type": "text", 
+          "placeholder": "Phone", 
+          "ref": "phone"
+        }
+      },
+      {
+        "label": "Link to your Facebook.",
+        "attributes": {
+          "type": "text", 
+          "placeholder": "Facebook", 
+          "ref": "facebook"
+        }
+      },
+      {
+        "label": "Link to your Twitter.",
+        "attributes": {
+          "type": "text", 
+          "placeholder": "Twitter", 
+          "ref": "twitter"
+        }
+      }
+    ]
   }
 }

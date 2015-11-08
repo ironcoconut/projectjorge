@@ -8,6 +8,7 @@
   },
   "form": {
     "submit_url": "api/volunteer/marys-charity/signup",
+    "message": "Thank you for volunteering",
     "elements": [
       {
         "label": "Your full name",

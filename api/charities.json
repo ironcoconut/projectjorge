@@ -5,6 +5,7 @@
         "className": "center button blue",
         "href": "#/charities/marys-charity"
       },
+      "type": "link_button",
       "title": "Mary's Charity",
       "subtitle": "Doing God's work."
     },
@@ -13,6 +14,7 @@
         "className": "center button green",
         "href": "#/charities/marys-charity"
       },
+      "type": "link_button",
       "title": "Milams",
       "subtitle": "Homes for the Needy"
     }
