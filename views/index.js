@@ -3,6 +3,7 @@
     componentDidMount: function() {
       var load_json = this.load_json,
           router = Router({
+            '/donate/:slug/support': load_json.bind(this, "donate/support"),
             '/donate/:slug': load_json.bind(this, "donate"),
             '/donate': load_json.bind(this, "donate"),
             '/volunteer/:slug/signup': load_json.bind(this, "volunteer/signup"),
@@ -46,6 +47,7 @@
                PJ.render_property('media', this.state),
                PJ.render_property('info', this.state),
                PJ.render_property('form', this.state),
+               PJ.render_property('support', this.state),
                PJ.render_property('actions', this.state),
                PJ.render_property('footer', this.state)
              );

@@ -12,7 +12,7 @@
     "secondary_button": {
       "attributes": {
         "className": "center button green",
-        "href": "#"
+        "href": "#/donate/jorge-bergoglio/support"
       },
       "type": "link_button",
       "title": "Support",
@@ -21,7 +21,7 @@
     "skip_button": {
       "attributes": {
         "className": "center button grey",
-        "href": "#"
+        "href": "#/donate/jorge-bergoglio"
       },
       "type": "link_button",
       "title": "Skip"

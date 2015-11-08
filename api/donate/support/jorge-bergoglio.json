@@ -1,0 +1,37 @@
+{
+  "support": {
+    "buttons": [
+      {
+        "attributes": {
+          "className": "center button blue",
+          "href": "#/donate/jorge-bergoglio/support"
+        },
+        "type": "link_button",
+        "title": "Facebook"
+      },
+      {
+        "attributes": {
+          "className": "center button green",
+          "href": "#/donate/jorge-bergoglio/support"
+        },
+        "type": "link_button",
+        "title": "Twitter"
+      },
+      {
+        "attributes": {
+          "className": "center button blue",
+          "href": "#/donate/jorge-bergoglio/support"
+        },
+        "type": "link_button",
+        "title": "Email"
+      }
+    ]
+  },
+  "footer": {
+    "exclude": "Donate"
+  },
+  "header": {
+    "title": "support jorge bergoglio",
+    "subtitle": "share his story with your friends and family"
+  }
+}
