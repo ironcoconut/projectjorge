@@ -6,13 +6,12 @@
       var refs = this.refs,
           name = this.refs.name.getDOMNode().value ? ' ' + this.refs.name.getDOMNode().value : '';
 
-      console.log('Submit: ' + this.props.submit_url);
       alert(this.props.message + name + ".");
 
       this.props.elements.forEach(function(element) {
         var ref = element.attributes.ref;
 
-        console.log(ref + ': ' + refs[ref].getDOMNode().value.trim());
+        //console.log(ref + ': ' + refs[ref].getDOMNode().value.trim());
       });
     },
     handleCancel: function (e) {
@@ -31,8 +30,9 @@
       var elements = this.props.elements,
           children = [];
 
-      elements.forEach(function(element) {
-        children.push(React.createElement('input', element.attributes));
+      elements.forEach(function(element, index) {
+        var attributes = $.extend({key: 'input-' + index}, element.attributes);
+        children.push(React.createElement('input', attributes));
       });
 
       return React.createElement('form', null, 
