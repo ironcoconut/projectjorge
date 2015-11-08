@@ -65,6 +65,18 @@ a.gray {
   background-color: #cdc9c9;
 }
 
+a.submit {
+  width: 70%;
+  font-size: 1.2em;
+  display: inline;
+}
+
+a.cancel {
+  width: 30%;
+  font-size: 1.2em;
+  display: inline;
+}
+
 .footer {
   text-align: center;
 }
@@ -79,6 +91,23 @@ a.gray {
 
 .footer {
   margin: 10px 0px;
+}
+
+.form-container {
+  margin: 0px 15px 5px;
+}
+
+input {
+  width: 100%;
+  margin: 15px 0px;
+  display: block;
+  font-size: 1.5em;
+}
+
+small {
+  width: 95%;
+  margin: 5px auto;
+  display: block;
 }
 
 @media (min-width: 750px) {

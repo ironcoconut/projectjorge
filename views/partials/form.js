@@ -31,13 +31,14 @@
 
       elements.forEach(function(element) {
         children.push(React.createElement('input', element.attributes));
-        children.push(React.createElement('small', null, element.label));
       });
 
       return React.createElement('form', null, 
-               children,
-               React.createElement('button', {onClick: this.handleCancel}, "Cancel"),
-               React.createElement('button', {onClick: this.handleSubmit}, "Signup")
+               React.createElement('div', {className: 'form-container'},
+                 children
+               ),
+               React.createElement('a', {onClick: this.handleCancel, className: "button cancel grey center"}, "Cancel"),
+               React.createElement('a', {onClick: this.handleSubmit, className: "button submit blue center"}, "Signup")
              );
     }
   });
