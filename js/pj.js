@@ -17,11 +17,11 @@ var PJ = {
     if (!key) key = name;
     return object && object[name] ? 
       React.createElement(this.elements[name], $.extend({key: key}, object[name])) : 
-      React.createElement('span');
+      null;
   },
   render_object: function(name, object, key) {
     return object ? 
       React.createElement(this.elements[name], $.extend({key: key}, object)) : 
-      React.createElement('span');
+      null;
   }
 };
