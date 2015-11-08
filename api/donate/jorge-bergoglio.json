@@ -1,31 +1,33 @@
 {
-  "actions": {
-    "primary_button": {
-      "attributes": {
-        "className": "center button blue",
-        "href": "#"
+  "button_list": {
+    "buttons": [
+      {
+        "attributes": {
+          "className": "center button blue",
+          "href": "#"
+        },
+        "type": "payment_button",
+        "title": "Donate",
+        "subtitle": "$1573 of $2000 per month raised"
       },
-      "type": "payment_button",
-      "title": "Donate",
-      "subtitle": "$1573 of $2000 per month raised"
-    },
-    "secondary_button": {
-      "attributes": {
-        "className": "center button green",
-        "href": "#/donate/jorge-bergoglio/support"
+      {
+        "attributes": {
+          "className": "center button green",
+          "href": "#/donate/jorge-bergoglio/support"
+        },
+        "type": "link_button",
+        "title": "Support",
+        "subtitle": "Share Jorge's story."
       },
-      "type": "link_button",
-      "title": "Support",
-      "subtitle": "Share Jorge's story."
-    },
-    "skip_button": {
-      "attributes": {
-        "className": "center button grey",
-        "href": "#/donate/jorge-bergoglio"
-      },
-      "type": "link_button",
-      "title": "Skip"
-    }
+      {
+        "attributes": {
+          "className": "center button grey",
+          "href": "#/donate/jorge-bergoglio"
+        },
+        "type": "link_button",
+        "title": "Skip"
+      }
+    ]
   },
   "footer": {
     "exclude": "Donate"

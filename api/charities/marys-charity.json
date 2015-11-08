@@ -1,21 +1,23 @@
 {
-  "actions": {
-    "primary_button": {
-      "attributes": {
-        "className": "center button blue",
-        "href": "#/volunteer/marys-charity"
+  "button_list": {
+    "buttons": [
+      {
+        "attributes": {
+          "className": "center button blue",
+          "href": "#/volunteer/marys-charity"
+        },
+        "type": "link_button",
+        "title": "Volunteer"
       },
-      "type": "link_button",
-      "title": "Volunteer"
-    },
-    "skip_button": {
-      "attributes": {
-        "className": "center button gray",
-        "href": "#/charities/marys-charity"
-      },
-      "type": "link_button",
-      "title": "Next"
-    }
+      {
+        "attributes": {
+          "className": "center button gray",
+          "href": "#/charities/marys-charity"
+        },
+        "type": "link_button",
+        "title": "Next"
+      }
+    ]
   },
   "footer": {
     "exclude": "Charities"

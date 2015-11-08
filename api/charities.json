@@ -1,23 +1,25 @@
 {
-  "actions": {
-    "primary_button": {
-      "attributes": {
-        "className": "center button blue",
-        "href": "#/charities/marys-charity"
+  "button_list": {
+    "buttons": [
+      {
+        "attributes": {
+          "className": "center button blue",
+          "href": "#/charities/marys-charity"
+        },
+        "type": "link_button",
+        "title": "Mary's Charity",
+        "subtitle": "Doing God's work."
       },
-      "type": "link_button",
-      "title": "Mary's Charity",
-      "subtitle": "Doing God's work."
-    },
-    "secondary_button": {
-      "attributes": {
-        "className": "center button green",
-        "href": "#/charities/marys-charity"
-      },
-      "type": "link_button",
-      "title": "Milams",
-      "subtitle": "Homes for the Needy"
-    }
+      {
+        "attributes": {
+          "className": "center button green",
+          "href": "#/charities/marys-charity"
+        },
+        "type": "link_button",
+        "title": "Milams",
+        "subtitle": "Homes for the Needy"
+      }
+    ]
   },
   "footer": {
     "exclude": "Charities"

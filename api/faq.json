@@ -1,23 +1,25 @@
 {
-  "actions": {
-    "primary_button": {
-      "attributes": {
-        "className": "center button blue",
-        "href": "#/donate/jorge-bergoglio"
+  "button_list": {
+    "buttons": [
+      {
+        "attributes": {
+          "className": "center button blue",
+          "href": "#/donate/jorge-bergoglio"
+        },
+        "type": "link_button",
+        "title": "Help Your Neighbors",
+        "subtitle": "23 Homeless in Houston need help."
       },
-      "type": "link_button",
-      "title": "Help Your Neighbors",
-      "subtitle": "23 Homeless in Houston need help."
-    },
-    "secondary_button": {
-      "attributes": {
-        "className": "center button green",
-        "href": "#/volunteer"
-      },
-      "type": "link_button",
-      "title": "Help Local Charities",
-      "subtitle": "7 Houston Charities Need Volunteers."
-    }
+      {
+        "attributes": {
+          "className": "center button green",
+          "href": "#/volunteer"
+        },
+        "type": "link_button",
+        "title": "Help Local Charities",
+        "subtitle": "7 Houston Charities Need Volunteers."
+      }
+    ]
   },
   "footer": {
     "exclude": "FAQ"

@@ -49,6 +49,7 @@
                PJ.render_property('form', this.state),
                PJ.render_property('support', this.state),
                PJ.render_property('actions', this.state),
+               PJ.render_property('button_list', this.state),
                PJ.render_property('footer', this.state)
              );
     }
