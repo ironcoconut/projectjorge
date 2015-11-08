@@ -1,0 +1,25 @@
+{
+  "header": {
+    "title": "Case Worker",
+    "subtitle": "Mary's Charity"
+  },
+  "footer": {
+    "exclude": "Volunteer"
+  },
+  "form": {
+    "attributes": {
+      "className": "",
+      "submit_url": "api/volunteer/marys-charity/signup"
+    },
+    "elements": [
+      {
+        "label": "Your full name",
+        "input": {
+          "type": "text",
+          "placeholder": "Name",
+          "ref": "name"
+        }
+      }
+    ]
+  }
+}

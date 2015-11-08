@@ -5,6 +5,7 @@
           router = Router({
             '/donate/:slug': load_json.bind(this, "donate"),
             '/donate': load_json.bind(this, "donate"),
+            '/volunteer/:slug/signup': load_json.bind(this, "volunteer/signup"),
             '/volunteer/:slug': load_json.bind(this, "volunteer"),
             '/volunteer': load_json.bind(this, "volunteer"),
             '/charities/:slug': load_json.bind(this, "charities"),
@@ -44,6 +45,7 @@
                PJ.render_property('header', this.state),
                PJ.render_property('media', this.state),
                PJ.render_property('info', this.state),
+               PJ.render_property('form', this.state),
                PJ.render_property('actions', this.state),
                PJ.render_property('footer', this.state)
              );
