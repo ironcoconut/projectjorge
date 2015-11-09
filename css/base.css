@@ -1,11 +1,11 @@
 body {
   margin: 0px;
   max-width: 100%;
-  background-color: #708090;
+  background-color: #fff;
 }
 
 .container { 
-  background-color: #fffafa;
+  background-color: #fff;
   width: 100%;
 }
 
@@ -14,14 +14,23 @@ h1, em, p {
 }
 
 a.button {
-  -webkit-appearance: button;
-  -moz-appearance: button;
-  appearance: button;
-  display: block;
-  margin: 5px 0px;
-  text-decoration: none;
-  color: initial;
-  text-align: center;
+
+	display: block;
+	background:#ddd;
+	border-radius: 6px;
+	margin-bottom: 5px;
+	margin-left:20px;
+	margin-right:20px;
+	text-decoration: none;
+	color: initial;
+	text-align: center;
+		transition: all 0.1s;
+
+}
+	a.button:hover{
+	transition: all 0.1s;
+	margin-left:5px;
+	margin-right:5px;
 }
 
 .center {
