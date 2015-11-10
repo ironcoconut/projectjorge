@@ -118,7 +118,8 @@ a.button {
 }
 
 a.blue {
-  background-color: #0B48FF;
+  background-color: #003BEB;
+  border: 3px solid #003BEB;
 }
 
 a.green {
@@ -133,15 +134,9 @@ a.gray {
 }
 
 a.submit {
-  width: 70%;
-  font-size: 1.2em;
-  display: inline;
 }
 
 a.clear {
-  width: 30%;
-  font-size: 1.2em;
-  display: inline;
 }
 
 .footer {
