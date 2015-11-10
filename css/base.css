@@ -117,18 +117,18 @@ a.button {
   padding: 17px 0px;
 }
 
-a.blue {
+a.primary {
   background-color: #003BEB;
   border: 3px solid #003BEB;
 }
 
-a.green {
+a.secondary {
   background-color: #FFF;
   border: 3px solid #003BEB;
   color: #0033CC;
 }
 
-a.gray {
+a.default {
   background-color: #e3e3e3;
   color: #0033CC;
 }

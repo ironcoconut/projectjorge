@@ -3,7 +3,7 @@
     "buttons": [
       {
         "attributes": {
-          "className": "center button blue",
+          "className": "center button primary",
           "href": "#/donate/jorge-bergoglio"
         },
         "type": "link_button",
@@ -12,7 +12,7 @@
       },
       {
         "attributes": {
-          "className": "center button green",
+          "className": "center button secondary",
           "href": "#/volunteer"
         },
         "type": "link_button",
