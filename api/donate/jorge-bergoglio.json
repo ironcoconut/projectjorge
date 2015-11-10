@@ -21,7 +21,7 @@
       },
       {
         "attributes": {
-          "className": "center button grey",
+          "className": "center button gray",
           "href": "#/donate/jorge-bergoglio"
         },
         "type": "link_button",
