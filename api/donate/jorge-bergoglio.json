@@ -3,7 +3,7 @@
     "buttons": [
       {
         "attributes": {
-          "className": "center button blue",
+          "className": "center button primary",
           "href": "#"
         },
         "type": "payment_button",
@@ -12,7 +12,7 @@
       },
       {
         "attributes": {
-          "className": "center button green",
+          "className": "center button secondary",
           "href": "#/donate/jorge-bergoglio/support"
         },
         "type": "link_button",
@@ -21,7 +21,7 @@
       },
       {
         "attributes": {
-          "className": "center button grey",
+          "className": "center button default",
           "href": "#/donate/jorge-bergoglio"
         },
         "type": "link_button",

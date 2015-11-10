@@ -39,8 +39,8 @@
                React.createElement('div', {className: 'form-container'},
                  children
                ),
-               React.createElement('a', {onClick: this.handleCancel, className: "button clear grey center"}, "Clear"),
-               React.createElement('a', {onClick: this.handleSubmit, className: "button submit blue center"}, "Signup")
+               React.createElement('a', {onClick: this.handleSubmit, className: "button primary center"}, "Signup"),
+               React.createElement('a', {onClick: this.handleCancel, className: "button secondary center"}, "Clear Form")
              );
     }
   });
