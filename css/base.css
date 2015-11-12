@@ -55,7 +55,7 @@ table {
 body {
   margin: 0px;
   max-width: 100%;
-  background-color: #e3e3e3;
+  background-color: #FEFEFE;
 	-webkit-touch-callout: none;
 	-webkit-user-select: none;
 	-khtml-user-select: none;
@@ -68,14 +68,14 @@ body {
 }
 
 #bodycontainer {
-  width: 100%;
 }
 
 .container { 
   background-color: #fff;
-  box-shadow: 4px 4px 4px grey;
-  width: 98%;
-  margin: 0px auto;
+  border-style: outset;
+  border-width: 2px 0px;
+  width: 100%;
+  margin: 3px auto;
 }
 h1{
 	font-weight: bold;
@@ -104,11 +104,6 @@ a.button {
 	transition: all 0.1s;
 	color:#fff;
 
-}
-	a.button:hover{
-	transition: all 0.1s;
-	margin-left:5px;
-	margin-right:5px;
 }
 
 .button>strong{
@@ -150,7 +145,8 @@ a.clear {
 }
 
 .media {
-  margin: 5px 0px;
+  margin: 5px auto;
+  width: 100%;
 }
 
 .hidden {
@@ -179,11 +175,17 @@ small {
 }
 
 @media (min-width: 750px) {
-  #bodycontainer {
-    width: 750px;
-    margin: 0px auto;
-  }
   .container {
-    width: 746px;
+    width: 750px;
+    border-width: 2px;
+  }
+  .media {
+    width: 754px;
+    margin: 5px -2px;
+  }
+  a.button:hover{
+    transition: all 0.1s;
+    margin-left:5px;
+    margin-right:5px;
   }
 }
