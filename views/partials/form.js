@@ -3,19 +3,26 @@
     handleSubmit: function (e) {
       e.preventDefault();
 
-      var refs = this.refs,
-          name = this.refs.name.getDOMNode().value ? ' ' + this.refs.name.getDOMNode().value : '';
-
-      alert(this.props.message + name + ".");
+      var handleCancel = this.handleCancel,
+          refs = this.refs,
+          data = {};
 
       this.props.elements.forEach(function(element) {
-        var ref = element.attributes.ref;
+        var prop = element.attributes.ref,
+            value = refs[prop].getDOMNode().value.trim();
 
-        //console.log(ref + ': ' + refs[ref].getDOMNode().value.trim());
+        data[prop] = value;
       });
+
+      PJ[this.props.submit_function](data).then(function(data) {
+          handleCancel();
+        }
+      );
     },
     handleCancel: function (e) {
-      e.preventDefault();
+      if (e) {
+        e.preventDefault();
+      }
 
       var refs = this.refs;
 

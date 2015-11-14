@@ -3,6 +3,7 @@
     componentDidMount: function() {
       var load_json = this.load_json,
           router = Router({
+            '/mailinglist': load_json.bind(this, "mailinglist"),
             '/donate/:slug/support': load_json.bind(this, "donate/support"),
             '/donate/:slug': load_json.bind(this, "donate"),
             '/donate': load_json.bind(this, "donate"),

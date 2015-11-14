@@ -1,0 +1,26 @@
+{
+  "header": {
+    "title": "My Inspiration"
+  },
+  "media": {
+    "url": "https://www.youtube.com/embed/6WhLwWNnf3o"
+  },
+  "info": {
+    "summary": "Let's use technology to end homeless in Houston.",
+    "content": "<p><a href='https://ironcoconut.github.io/projectjorge/#/donate/jorge-bergoglio' target='_blank'>View the demo.</a></p><p><a href='https://github.com/ironcoconut/projectjorge' target='_blank'>Visit project github page.</a></p>"
+  },
+  "form": {
+    "submit_function": "save_email",
+    "message": "Thank you for joining our mailing list.",
+    "elements": [
+      {
+        "label": "Join our mailing list.",
+        "attributes": {
+          "type": "text",
+          "placeholder": "join our mailing list",
+          "ref": "email"
+        }
+      }
+    ]
+  }
+}
