@@ -8,5 +8,5 @@
     }
   });
 
-  PJ.register('header', Header);
+  PJ.Element.register('header', Header);
 })();

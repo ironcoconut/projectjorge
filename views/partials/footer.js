@@ -19,5 +19,5 @@
     }
   });
 
-  PJ.register('footer', Footer);
+  PJ.Element.register('footer', Footer);
 })();

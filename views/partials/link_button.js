@@ -12,5 +12,5 @@
     }
   });
 
-  PJ.register('link_button', LinkButton);
+  PJ.Element.register('link_button', LinkButton);
 })();

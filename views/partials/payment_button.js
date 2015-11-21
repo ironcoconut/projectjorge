@@ -34,5 +34,5 @@
     }
   });
 
-  PJ.register('payment_button', PaymentButton);
+  PJ.Element.register('payment_button', PaymentButton);
 })();

@@ -14,5 +14,5 @@
     }
   });
 
-  PJ.register('more_info', MoreInfo);
+  PJ.Element.register('more_info', MoreInfo);
 })();

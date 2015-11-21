@@ -17,5 +17,5 @@
     }
   });
 
-  PJ.register('media', Media);
+  PJ.Element.register('media', Media);
 })();

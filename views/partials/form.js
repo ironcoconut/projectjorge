@@ -14,7 +14,7 @@
         data[prop] = value;
       });
 
-      PJ[this.props.submit_function](data).then(function(data) {
+      PJ.Model[this.props.submit_function](data).then(function(data) {
           handleCancel();
         }
       );
@@ -52,5 +52,5 @@
     }
   });
 
-  PJ.register('form', Form);
+  PJ.Element.register('form', Form);
 })();
