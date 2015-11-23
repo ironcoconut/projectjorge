@@ -6,7 +6,7 @@
 
         return {
           button_list: View.button_list([{ style: "primary",
-                                              link : "#/donate/" + stats.donee_stug,
+                                              link : "#/donate/" + stats.donee_slug,
                                               title: "Help Your Neighbors",
                                               subtitle: stats.total_donees + "Homeless in Houston need help."
                                             },
@@ -14,10 +14,6 @@
                                               link: "#/volunteer",
                                               title: "Help Local Charities",
                                               subtitle: stats.total_charities + "Houston Charities Need Volunteers."
-                                            },
-                                            { style: "default",
-                                              link: "#/donate/" + donee.next_slug,
-                                              title: "Skip"
                                             }]),
           footer: View.footer("FAQ"),
           header: View.header("FAQ", "about our mission and inspiration"),
