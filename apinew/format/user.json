@@ -1,0 +1,40 @@
+{
+  "elements": [
+    {
+      "label": "Your full name",
+      "type": "text",
+      "placeholder": "Name",
+      "ref": "name"
+    },
+    {
+      "label": "Password",
+      "type": "text",
+      "placeholder": "Password",
+      "ref": "password"
+    },
+    {
+      "label": "Your email address.",
+      "type": "text", 
+      "placeholder": "Email", 
+      "ref": "email"
+    },
+    {
+      "label": "Your phone number.",
+      "type": "text", 
+      "placeholder": "Phone", 
+      "ref": "phone"
+    },
+    {
+      "label": "Link to your Facebook.",
+      "type": "text", 
+      "placeholder": "Facebook", 
+      "ref": "facebook"
+    },
+    {
+      "label": "Link to your Twitter.",
+      "type": "text", 
+      "placeholder": "Twitter", 
+      "ref": "twitter"
+    }
+  ]
+};
