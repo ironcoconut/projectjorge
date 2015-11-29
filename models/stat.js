@@ -1,7 +1,10 @@
 (function() {
   var Stat = {
         find: function() {
-          return PJ.load_json('stat');
+          return PJ.load_json('stat')
+                   .then(function(data) {
+                     return data.data;
+                   });
         }
       };
 

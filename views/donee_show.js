@@ -12,7 +12,7 @@
                                               subtitle: "Share " + donee.first_name + "'s story"
                                             },
                                             { style: "default",
-                                              link: "#/donate/" + charity.next_slug,
+                                              link: "#/donate/" + donee.next_slug,
                                               title: "Skip"
                                             }]),
           footer: View.footer("Donate"),
