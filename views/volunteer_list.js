@@ -1,7 +1,8 @@
 (function() {
   var View = PJ.View,
       VolunteerList = function(data) {
-        var positions = data.positions,
+        var positions = data.data,
+            next_donee_slug = data.next_donee_slug,
             get_route = data.get_route;
 
         var buttons = positions.map(function(position, index) {
@@ -15,7 +16,7 @@
 
         return {
           button_list: View.button_list(buttons),
-          footer: View.footer("Volunteer"),
+          footer: View.footer("Volunteer", next_donee_slug, get_route),
           header: View.header("Volunteer Positions", "lend a helping hand")
         };
       };

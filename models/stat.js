@@ -3,7 +3,7 @@
         find: function() {
           return PJ.load_json('stat')
                    .then(function(data) {
-                     return data.data;
+                     return data;
                    });
         }
       };

@@ -16,7 +16,7 @@
             .then(function(data, format) {
               return $.extend( { elements: format[0].elements,
                                  submit_function: save
-                               }, data[0].data);
+                               }, data[0]);
             }, function(err) {
               console.log('err:', err.state());
             });
@@ -24,7 +24,7 @@
 
   function load_show() {
     return PJ.load_json('volunteer').then(function(data) {
-      return { positions: data.data };
+      return data;
     });
   };
   

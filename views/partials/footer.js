@@ -1,13 +1,23 @@
 (function() {
   var View = PJ.View,
-      Footer = function(name, get) {
-        console.log(name);
-        var names = ['FAQ', 'Donate', 'Volunteer', 'Join', 'Charities'],
-            index = names.indexOf(name),
-            spliced_name = names.splice(index, 1),
-            mapped_names = names.map(function (item, i) {});
-        return {
-        };
+      Footer = function(name, next_donee, get) {
+        var paths = {
+              'FAQ': get('faq'), 
+              'Donate': get('donee_show', next_donee), 
+              'Volunteer': get('volunteer_list'), 
+              'Join': get('join'), 
+              'Charities': get('charities_list')
+            },
+            items = ['FAQ', 'Donate', 'Volunteer', 'Join', 'Charities'],
+            name_arr = [];
+
+        items.forEach(function(item){
+          if (item != name) {
+            name_arr.push({label: item, path: paths[item]});
+          }
+        });
+
+        return { items: name_arr };
       };
 
   View.register('footer', Footer);

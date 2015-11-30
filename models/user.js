@@ -4,16 +4,13 @@
         find: function(slug) {
           return PJ.load_json('job', slug)
                    .then(function(data) {
-                     return data.data;
+                     return data;
                    });
         },
         create_parse: function () {
           var save = this.save;
           return PJ.load_json('format', 'user-parse').done(function(data) {
-            return {
-              "submit_function": save,
-              "elements": data.elements
-            };
+            return $.extend({ submit_function: save }, data);
           });
         },
         save: function (data) {
@@ -28,13 +25,16 @@
           );
         },
         create: function () {
-          return PJ.load_json('format', 'user').then(function(data) {
-            return {
-              submit_function: function (data) {
-                return $.when(console.log('Saved data:', data));
-              },
-              elements: data.elements
-            };
+          return $.when(PJ.load_json('stat'), 
+                        PJ.load_json('format', 'user'))
+                  .then(function(data, format) {
+                    return {
+                      submit_function: function (data) {
+                        return $.when(console.log('Saved data:', data));
+                      },
+                      elements: format[0].elements,
+                      next_donee_slug: data[0].next_donee_slug
+                    };
           });
         }
       };
