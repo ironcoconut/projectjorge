@@ -1,10 +1,12 @@
 (function() {
   var View = PJ.View,
-      CharityList = function(charities) {
-        var buttons = charities.map(function(charity, index) {
+      CharityList = function(data) {
+        var charities = data.charities,
+            get_route = data.get_route,
+            buttons = charities.map(function(charity, index) {
               return { 
                 style: index % 2 == 0 ? "primary" : "secondary",
-                link: "#/charities/" + charity.slug,
+                link: get_route("charity_show", [charity.slug]),
                 type: "link_button",
                 title: charity.name,
                 subtitle: charity.subtitle

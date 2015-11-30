@@ -28,12 +28,12 @@
           );
         },
         create: function () {
-          return PJ.load_json('format', 'user').done(function(data) {
+          return PJ.load_json('format', 'user').then(function(data) {
             return {
-              "submit_function": function (data) {
-                console.log('Saved data:', data);
+              submit_function: function (data) {
+                return $.when(console.log('Saved data:', data));
               },
-              "elements": data.elements
+              elements: data.elements
             };
           });
         }

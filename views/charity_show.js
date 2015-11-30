@@ -1,13 +1,17 @@
 (function() {
   var View = PJ.View,
-      CharityHome = function(charity) {
+      CharityShow = function(charity) {
+        var get_route = charity.get_route;
+
         return {
           button_list: View.button_list([{ style: "primary",
-                                              link: "#/volunteer/" + charity.slug,
+                                              link: get_route("charity_volunteer", 
+                                                              [charity.slug]),
                                               title: "Volunteer"
                                             },
                                             { style: "default",
-                                              link: "#/charities/" + charity.slug,
+                                              link: get_route("charity_show",
+                                                              [charity.next_charity_slug]),
                                               title: "Next"
                                             }]),
           footer: View.footer("Charities"),
@@ -17,5 +21,5 @@
         };
       };
 
-  View.register('charity_home', CharityHome);
+  View.register('charity_show', CharityShow);
 })();

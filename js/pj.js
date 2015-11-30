@@ -13,6 +13,9 @@ var PJ = (function() {
       return $.ajax({
         url: url,
         dataType: 'json'
+      }).fail(function() {
+        console.log('Invalid [path, slug]:', path, slug);
+        console.log(arguments);
       });
     },
     start: function() {

@@ -14,7 +14,7 @@
         data[prop] = value;
       });
 
-      PJ.Model[this.props.submit_function](data).then(function(data) {
+      this.props.submit_function(data).then(function(data) {
           handleCancel();
         }
       );

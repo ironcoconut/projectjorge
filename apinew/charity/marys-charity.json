@@ -1,6 +1,7 @@
 {
-  "data: {
-    "slug": 'marys-charity",
+  "data": {
+    "slug": "marys-charity",
+    "next_charity_slug": "roys-donatorium",
     "name": "Mary's Charity",
     "subtitle": "helping the mentally ill find homes",
     "summary": "Mary's charity is looking for volunteers.",
