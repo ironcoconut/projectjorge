@@ -9,8 +9,14 @@
         },
         create_parse: function () {
           var save = this.save;
-          return PJ.load_json('format', 'user-parse').done(function(data) {
-            return $.extend({ submit_function: save }, data);
+          return $.when(PJ.load_json('stat'), 
+                        PJ.load_json('format', 'user-parse'))
+                  .then(function(data, format) {
+                    return {
+                      submit_function: save,
+                      elements: format[0].elements,
+                      next_donee_slug: data[0].next_donee_slug
+                    };
           });
         },
         save: function (data) {

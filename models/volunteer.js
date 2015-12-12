@@ -15,7 +15,7 @@
                   PJ.load_json('format', 'volunteer'))
             .then(function(data, format) {
               return $.extend( { elements: format[0].elements,
-                                 submit_function: save
+                                 submit_function: Volunteer.save
                                }, data[0]);
             }, function(err) {
               console.log('err:', err.state());

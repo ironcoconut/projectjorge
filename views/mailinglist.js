@@ -2,6 +2,7 @@
   var View = PJ.View,
       Mailinglist = function(data) {
         var elements = data.elements,
+            submit_function = data.submit_function,
             get_route = data.get_route,
             next_donee_slug = data.next_donee_slug,
             summary = "Pope Francis is right. Let us use technology to end homelessness in Houston.",
@@ -13,7 +14,7 @@
           header: View.header("My Inspiration"),
           media: View.media("https://www.youtube.com/embed/6WhLwWNnf3o"),
           info: View.info(summary, content),
-          form: View.form(user.submit_function, message, model.elements)
+          form: View.form(submit_function, message, elements)
         };
       };
 
