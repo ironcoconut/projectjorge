@@ -2,7 +2,7 @@ var PJ = (function() {
   return {
     load_json: function (path, slug) {
       var url = '',
-          root_path = 'apinew/' + path,
+          root_path = 'api/' + path,
           ext = '.json';
 
       if (slug) {
