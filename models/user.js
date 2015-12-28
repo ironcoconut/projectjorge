@@ -9,15 +9,14 @@
         },
         create_parse: function () {
           var save = this.save;
-          return $.when(PJ.load_json('stat'), 
-                        PJ.load_json('format', 'user-parse'))
-                  .then(function(data, format) {
-                    return {
-                      submit_function: save,
-                      elements: format[0].elements,
-                      next_donee_slug: data[0].next_donee_slug
-                    };
-          });
+          return PJ.load_json('stat')
+                   .then(function(data, format) {
+                     return {
+                       submit_function: save,
+                       elements: PJ.Format.UserParse,
+                       next_donee_slug: data.next_donee_slug
+                     };
+                   });
         },
         save: function (data) {
           var user = new ParseUser(data);
@@ -31,17 +30,16 @@
           );
         },
         create: function () {
-          return $.when(PJ.load_json('stat'), 
-                        PJ.load_json('format', 'user'))
-                  .then(function(data, format) {
-                    return {
-                      submit_function: function (data) {
-                        return $.when(console.log('Saved data:', data));
-                      },
-                      elements: format[0].elements,
-                      next_donee_slug: data[0].next_donee_slug
-                    };
-          });
+          return PJ.load_json('stats')
+                   .then(function(data, format) {
+                     return {
+                       submit_function: function (data) {
+                         return $.when(console.log('Saved data:', data));
+                       },
+                       elements: PJ.Format.User,
+                       next_donee_slug: data.next_donee_slug
+                     };
+                   });
         }
       };
 

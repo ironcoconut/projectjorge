@@ -1,7 +1,7 @@
 (function() {
   var Stat = {
         find: function() {
-          return PJ.load_json('stat')
+          return PJ.load_json('stats')
                    .then(function(data) {
                      return data;
                    });
