@@ -8,17 +8,17 @@
                    });
         },
         create_parse: function () {
-          var save = this.save;
+          var save_parse = this.save_parse;
           return PJ.load_json('stat')
                    .then(function(data, format) {
                      return {
-                       submit_function: save,
+                       submit_function: save_parse,
                        elements: PJ.Format.UserParse,
                        next_donee_slug: data.next_donee_slug
                      };
                    });
         },
-        save: function (data) {
+        save_parse: function (data) {
           var user = new ParseUser(data);
 
           return user.save().then(function(data) {
@@ -30,16 +30,24 @@
           );
         },
         create: function () {
+          var save = this.save;
           return PJ.load_json('stats')
                    .then(function(data, format) {
                      return {
-                       submit_function: function (data) {
-                         return $.when(console.log('Saved data:', data));
-                       },
+                       submit_function: save,
                        elements: PJ.Format.User,
                        next_donee_slug: data.next_donee_slug
                      };
                    });
+        },
+        save: function (data) {
+          return $.post('http://localhost:4000/api/users', {user: data}).then(function(user) {
+              alert("Thanks for signing up " + user.name + ".");
+            },
+            function() {
+              alert('Something went wrong. :/');
+            }
+          );
         }
       };
 

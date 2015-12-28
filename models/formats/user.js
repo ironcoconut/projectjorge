@@ -8,7 +8,7 @@ PJ.Format.register('User', [
   {
     "label": "Your handle",
     "type": "text",
-    "placeholder": "username",
+    "placeholder": "Username",
     "ref": "username"
   },
   {
