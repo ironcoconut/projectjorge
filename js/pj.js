@@ -21,7 +21,7 @@ var PJ = (function() {
       });
     },
     save_json: function (path, data) {
-      return $.post(get_url(path), {user: data});
+      return $.post(get_url(path), data);
     },
     start: function() {
       var Router = this.Router;
