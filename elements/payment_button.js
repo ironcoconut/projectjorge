@@ -1,5 +1,6 @@
-(function() {
-  var PaymentButton = React.createClass({
+PJ.Element.register(
+  'payment_button', 
+  React.createClass({
     componentDidMount: function() {
       var handler = this.stripe_handler;
       $(window).on('popstate', function() {
@@ -32,7 +33,5 @@
 
       return React.createElement('a', attributes, children);
     }
-  });
-
-  PJ.Element.register('payment_button', PaymentButton);
-})();
+  })
+);

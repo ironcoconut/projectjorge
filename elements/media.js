@@ -1,5 +1,6 @@
-(function() { 
-  var Media = React.createClass({
+PJ.Element.register(
+  'media', 
+  React.createClass({
     resizeIframe: function() {
       var height = $('.media').width() * (9/16);
 
@@ -12,10 +13,13 @@
     },
     render: function() {
       return React.createElement('div', null,
-               React.createElement('iframe', {className: "media", width: "100%", src: this.props.url, frameBorder: "0", allowFullScreen: true, key: 'iframe'})
+               React.createElement('iframe', {className: "media", 
+                                              width: "100%", 
+                                              src: this.props.url, 
+                                              frameBorder: "0", 
+                                              allowFullScreen: true, 
+                                              key: 'iframe'})
              );
     }
-  });
-
-  PJ.Element.register('media', Media);
-})();
+  })
+);

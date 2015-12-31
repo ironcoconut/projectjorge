@@ -1,5 +1,6 @@
-(function() { 
-  var Footer = React.createClass({
+PJ.Element.register(
+  'footer', 
+  React.createClass({
     render: function() {
       var items = this.props.items,
           children = [];
@@ -18,7 +19,5 @@
 
       return React.createElement('div', {className: "footer"}, children);
     }
-  });
-
-  PJ.Element.register('footer', Footer);
-})();
+  })
+);

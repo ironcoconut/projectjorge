@@ -1,5 +1,6 @@
-(function() {
-  var LinkButton = React.createClass({
+PJ.Element.register(
+  'link_button', 
+  React.createClass({
     render: function() {
       var children = [ React.createElement('strong', {key: 'strong'}, this.props.title) ];
 
@@ -10,7 +11,5 @@
 
       return React.createElement('a', this.props.attributes, children);
     }
-  });
-
-  PJ.Element.register('link_button', LinkButton);
-})();
+  })
+);

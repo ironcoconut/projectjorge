@@ -1,5 +1,6 @@
-(function() { 
-  var MoreInfo = React.createClass({
+PJ.Element.register(
+  'more_info', 
+  React.createClass({
     render: function () {
       var attributes = {
                          className: this.props.show ? '' : 'hidden', 
@@ -12,7 +13,5 @@
 
       return React.createElement('div', attributes);
     }
-  });
-
-  PJ.Element.register('more_info', MoreInfo);
-})();
+  })
+);

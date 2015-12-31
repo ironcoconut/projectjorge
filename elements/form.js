@@ -1,5 +1,6 @@
-(function() {
-  var Form = React.createClass({
+PJ.Element.register(
+  'form', 
+  React.createClass({
     handleSubmit: function (e) {
       e.preventDefault();
 
@@ -50,7 +51,5 @@
                React.createElement('a', {onClick: this.handleCancel, className: "button secondary center"}, "Clear Form")
              );
     }
-  });
-
-  PJ.Element.register('form', Form);
-})();
+  })
+);
