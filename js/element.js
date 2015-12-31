@@ -1,5 +1,6 @@
-(function() {
-  var Element = (function() {
+PJ.register(
+  'Element', 
+  (function() {
     var elements = {};
 
     return {
@@ -29,7 +30,5 @@
           null;
       }
     }
-  }());
-
-  PJ.register('Element', Element);
-})();
+  }())
+);

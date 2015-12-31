@@ -5,6 +5,11 @@ var PJ = (function() {
     return slug ? root_path + '/' + slug : root_path;
   };
 
+  function register (name, element) {
+    if (this[name]) throw "Element already exists: " + name;
+    this[name] = element ? element : {register: register};
+  }
+
   return {
     load_json: function (path, slug) {
       return $.ajax({
@@ -21,14 +26,11 @@ var PJ = (function() {
     start: function() {
       var Router = this.Router;
 
-      this.Model.initialize();
+      Parse.initialize("7gKwKXIqeZm2mJpSgzzt0oYMNF9zwjzBr2YKVRN6", "H0MHpFwR7ksEPxCeuAqNQnK7dzXKVJOeKySLbiNb");
       this.Element.render_app(function(set_state) {
         Router.initialize(set_state);
       });
     },
-    register: function(name, element) {
-      if (this[name]) throw "Name already exists: " + name;
-      this[name] = element;
-    }
+    register: register
   }
 }());
