@@ -1,157 +1,123 @@
-(function() {
-  var update_state = null,
-      get_route = null,
-      routing_table = {
-        mailinglist: {
-          path: '/mailinglist',
-          handler: function () {
-            PJ.Model.User.create_parse()
-              .then(add_get_route)
-              .then(PJ.View.mailinglist)
-              .done(update_state);
-          }
-        },
-        donee_show: {
-          path: '/donee/:slug',
-          handler: function(slug) {
-            PJ.Model.Donee.find(slug)
-              .then(add_get_route)
-              .then(PJ.View.donee_show)
-              .done(update_state);
-          }
-        },
-        donee_support: {
-          path: '/support/:slug',
-          handler: function(slug) {
-            PJ.Model.Donee.find(slug)
-              .then(add_get_route)
-              .then(PJ.View.donee_support)
-              .done(update_state);
-          }
-        },
-        charity_create: {
-          path: '/charities/create',
-          handler: function() {
-            PJ.Model.Charity.create()
-              .then(add_get_route)
-              .then(PJ.View.charity_create)
-              .done(update_state);
-          }
-        },
-        charity_show: {
-          path: '/charities/:slug',
-          handler: function(slug) {
-            PJ.Model.Charity.find(slug)
-              .then(add_get_route)
-              .then(PJ.View.charity_show)
-              .done(update_state);
-          }
-        },
-        charities_list: {
-          path: '/charities',
-          handler: function() {
-            PJ.Model.Charity.find()
-              .then(add_get_route)
-              .then(PJ.View.charity_list)
-              .done(update_state);
-          }
-        },
-        charity_volunteer: {
-          path: '/volunteer/:slug',
-          handler: function(slug) {
-            PJ.Model.Volunteer.find(slug)
-              .then(add_get_route)
-              .then(PJ.View.charity_volunteer)
-              .done(update_state);
-          }
-        },
-        volunteer_list: {
-          path: '/volunteer',
-          handler: function() {
-            PJ.Model.Volunteer.find()
-              .then(add_get_route)
-              .then(PJ.View.volunteer_list)
-              .done(update_state);
-          }
-        },
-        join: {
-          path: '/join',
-          handler: function() {
-            PJ.Model.User.create()
-              .then(add_get_route)
-              .then(PJ.View.join)
-              .done(update_state);
-          }
-        },
-        faq: {
-          path: '/faq',
-          handler: function() {
-            PJ.Model.Stat.find()
-              .then(add_get_route)
-              .then(PJ.View.faq)
-              .done(update_state);
-          }
-        },
-        home: {
-          path: '/',
-          handler: function() {
-            PJ.Model.Stat.find()
-              .then(add_get_route)
-              .then(PJ.View.faq)
-              .done(update_state);
-          }
+PJ.register(
+  'Router', 
+  {
+    initialize: function(update_state) {
+      var routing_table = {
+            mailinglist: {
+              path: '/mailinglist',
+              model: PJ.Model.User.create_parse,
+              view: PJ.View.mailinglist
+            },
+            donee_show: {
+              path: '/donee/:slug',
+              model: PJ.Model.Donee.find,
+              view: PJ.View.donee_show
+            },
+            donee_support: {
+              path: '/support/:slug',
+              model: PJ.Model.Donee.find,
+              view: PJ.View.donee_support
+            },
+            charity_create: {
+              path: '/charities/create',
+              model: PJ.Model.Charity.create,
+              view: PJ.View.charity_create
+            },
+            charity_show: {
+              path: '/charities/:slug',
+              model: PJ.Model.Charity.find,
+              view: PJ.View.charity_show
+            },
+            charities_list: {
+              path: '/charities',
+              model: PJ.Model.Charity.find,
+              view: PJ.View.charity_list
+            },
+            charity_volunteer: {
+              path: '/volunteer/:slug',
+              model: PJ.Model.Volunteer.find,
+              view: PJ.View.charity_volunteer
+            },
+            volunteer_list: {
+              path: '/volunteer',
+              model: PJ.Model.Volunteer.find,
+              view: PJ.View.volunteer_list
+            },
+            join: {
+              path: '/join',
+              model: PJ.Model.User.create,
+              view: PJ.View.join
+            },
+            faq: {
+              path: '/faq',
+              model: PJ.Model.Stat.find,
+              view: PJ.View.faq
+            },
+            home: {
+              path: '/',
+              model: PJ.Model.Stat.find,
+              view: PJ.View.faq
+            }
+          },
+          processed = process_routing_table(),
+          router = Router(processed.routes);
+
+      router.init('/');
+
+      function process_routing_table() {
+        var routes = {},
+            paths = {};
+
+        for (var key in routing_table) {
+          if(routing_table.hasOwnProperty(key)) {
+            var model = routing_table[key].model,
+                view  = routing_table[key].view,
+                path  = routing_table[key].path;
+
+            routes[path] = build_route_function(model, view);
+            paths[key] = path;
+          } 
         }
-      },
-      TheRouter = {
-        initialize: function(UpdateState) {
-          var processed = process_routing_table();
 
-          get_route = function(key, data) {
-            if (!processed.paths[key]) throw("No such route: "+key);
-
-            var path = '#' + processed.paths[key],
-                slugs = Array.isArray(data) ? data : [data];
-
-            return slugs && slugs.length > 0 ?
-              slugs.reduce(function(pre, cur) {
-                return pre.replace(/(:\w+)/, cur);
-              }, path) :
-              path;
-          };
-
-          update_state = function(data) {
-            UpdateState(data);
-          };
-
-          this.routes = processed.routes;
-          this.paths = processed.paths;
-          this.router = Router(this.routes);
-          this.router.init('/');
-        }
+        return {
+          routes: routes,
+          paths: paths
+        };
       };
 
-  function process_routing_table() {
-    var routes = {},
-        paths = {};
+      function build_route_function (model, view) {
+        return function () {
+          $.when(model.apply(null, arguments),
+                 PJ.Model.Stat.find()
+           )
+           .then(function(data, stat) {
+             var base_data = {
+                   get_route: get_route, 
+                   next_donee_slug: stat.data.donee_slug
+                 },
+                 view_data = view($.extend(base_data, data));
 
-    for (var key in routing_table) {
-      if(routing_table.hasOwnProperty(key)) {
-        var handler = routing_table[key].handler,
-            path    = routing_table[key].path;
-        routes[path] = handler;
-        paths[key] = path;
-      } 
+             update_state(view_data);
+           })
+        };
+      };
+
+      function get_route (key, data) {
+        if (!processed.paths[key]) throw("No such route: "+key);
+
+        var path = '#' + processed.paths[key],
+            slugs = Array.isArray(data) ? data : [data];
+
+        return slugs && slugs.length > 0 ?
+          slugs.reduce(function(pre, cur) {
+            return pre.replace(/(:\w+)/, cur);
+          }, path) :
+          path;
+      };
+
+      this.routes = processed.routes;
+      this.paths = processed.paths;
+      this.router = router;
     }
-
-    return {
-      routes: routes,
-      paths: paths
-    };
-  };
-
-  function add_get_route(data) {
-    return $.extend({get_route: get_route}, data);
-  };
-
-  PJ.register('Router', TheRouter);
-})();
+  }
+);

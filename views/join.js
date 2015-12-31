@@ -1,7 +1,6 @@
 (function() {
   var View = PJ.View,
       Join = function(data) {
-        console.log(data);
         var form_elements = data.elements,
             submit_function = data.submit_function,
             get_route = data.get_route,

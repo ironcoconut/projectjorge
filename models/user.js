@@ -31,14 +31,11 @@
         },
         create: function () {
           var save = this.save;
-          return PJ.load_json('stats')
-                   .then(function(data, format) {
-                     return {
-                       submit_function: save,
-                       elements: PJ.Format.User,
-                       next_donee_slug: data.next_donee_slug
-                     };
-                   });
+
+          return {
+            submit_function: save,
+            elements: PJ.Format.User
+          };
         },
         save: function (data) {
           return PJ.save_json('users', {user: data}).then(function(user) {
