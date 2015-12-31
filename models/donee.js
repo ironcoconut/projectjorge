@@ -1,1 +1,1 @@
-PJ.Model.register('Donee', 'donee', 'donees');
+PJ.Model.register('Donee', 'donee', 'donees', []);

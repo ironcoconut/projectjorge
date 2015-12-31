@@ -1,7 +1,7 @@
 PJ.register(
   'Model',
   {
-    register: function (name, singular, plural) {
+    register: function (name, singular, plural, elements) {
       if (this[name]) throw "Element already exists: " + name;
 
       function find (slug) {
@@ -12,7 +12,7 @@ PJ.register(
       function create () {
         return {
           submit_function: save,
-          elements: PJ.Format[name]
+          elements: elements
         };
       };
       function save (data) {
