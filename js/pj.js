@@ -1,21 +1,22 @@
 var PJ = (function() {
+  function get_url (path, slug) {
+    var root_path = 'http://localhost:4000/api/' + path;
+
+    return slug ? root_path + '/' + slug : root_path;
+  };
+
   return {
     load_json: function (path, slug) {
-      var url = '',
-          root_path = 'http://localhost:4000/api/' + path;
-
-      if (slug) {
-        url = root_path + '/' + slug;
-      } else {
-        url = root_path;
-      }
       return $.ajax({
-        url: url,
+        url: get_url(path, slug),
         dataType: 'json'
       }).fail(function() {
         console.log('Invalid [path, slug]:', path, slug);
         console.log(arguments);
       });
+    },
+    save_json: function (path, data) {
+      return $.post(get_url(path), {user: data});
     },
     start: function() {
       var Router = this.Router;

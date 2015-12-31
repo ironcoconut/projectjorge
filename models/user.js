@@ -41,7 +41,7 @@
                    });
         },
         save: function (data) {
-          return $.post('http://localhost:4000/api/users', {user: data}).then(function(user) {
+          return PJ.save_json('users', {user: data}).then(function(user) {
               alert("Thanks for signing up " + user.name + ".");
             },
             function() {

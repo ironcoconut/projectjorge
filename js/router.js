@@ -29,6 +29,15 @@
               .done(update_state);
           }
         },
+        charity_create: {
+          path: '/charities/create',
+          handler: function() {
+            PJ.Model.Charity.create()
+              .then(add_get_route)
+              .then(PJ.View.charity_create)
+              .done(update_state);
+          }
+        },
         charity_show: {
           path: '/charities/:slug',
           handler: function(slug) {
