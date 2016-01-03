@@ -1,5 +1,4 @@
 PJ.View.register('charity_create', function(data) {
-  console.log(data);
   var View = PJ.View,
       form_elements = data.elements,
       submit_function = data.submit_function,

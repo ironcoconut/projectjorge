@@ -1,25 +1,23 @@
-(function() {
-  var View = PJ.View,
-      VolunteerList = function(data) {
-        var positions = data.data,
-            next_donee_slug = data.next_donee_slug,
-            get_route = data.get_route;
+PJ.View.register(
+  'volunteer_list',
+  function(data) {
+    var positions = data.data,
+        next_donee_slug = data.next_donee_slug,
+        get_route = data.get_route;
 
-        var buttons = positions.map(function(position, index) {
-              return { 
-                style: index % 2 == 0 ? "primary" : "secondary",
-                link: get_route("charity_volunteer", position.charity_slug),
-                title: position.title,
-                subtitle: position.charity_name
-              };
-            });
+    var buttons = positions.map(function(position, index) {
+          return { 
+            style: index % 2 == 0 ? "primary" : "secondary",
+            link: get_route("charity_volunteer", position.charity_slug),
+            title: position.title,
+            subtitle: position.charity_name
+          };
+        });
 
-        return {
-          button_list: View.button_list(buttons),
-          footer: View.footer("Volunteer", next_donee_slug, get_route),
-          header: View.header("Volunteer Positions", "lend a helping hand")
-        };
-      };
-
-  View.register('volunteer_list', VolunteerList);
-})();
+    return {
+      button_list: PJ.View.button_list(buttons),
+      footer: PJ.View.footer("Volunteer", next_donee_slug, get_route),
+      header: PJ.View.header("Volunteer Positions", "lend a helping hand")
+    };
+  }
+);

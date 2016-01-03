@@ -1,11 +1,9 @@
-(function() {
-  var View = PJ.View,
-      Header = function(title, subtitle) {
-        return { 
-          "title": title,
-          "subtitle": subtitle
-        };
-      };
-
-  View.register('header', Header);
-})();
+PJ.View.register(
+  'header', 
+  function(title, subtitle) {
+    return { 
+      "title": title,
+      "subtitle": subtitle
+    };
+  }
+);
