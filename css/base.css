@@ -188,12 +188,13 @@ ul.menu a {
 ul.menu li {
   display: inline-block;
   padding: 5px;
-  width: 20%;
 }
 
 ul.menu li.user {
   text-align: right;
-  width: 50%;
+  width: 95%;
+  padding: 0px;
+  font-size: 0.8em;
 }
 
 ul.menu li.active {

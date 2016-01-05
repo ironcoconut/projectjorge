@@ -5,56 +5,73 @@ PJ.register(
       var routing_table = {
             mailinglist: {
               path: '/mailinglist',
+              menu: 'Mailinglist',
               model: PJ.Model.User.create_parse,
               view: PJ.View.mailinglist
             },
             donee_show: {
               path: '/donee/:slug',
+              menu: 'Donate',
               model: PJ.Model.Donee.find,
               view: PJ.View.donee_show
             },
             donee_support: {
               path: '/support/:slug',
+              menu: 'Donate',
               model: PJ.Model.Donee.find,
               view: PJ.View.donee_support
             },
             charity_create: {
               path: '/charities/create',
+              menu: 'Charities',
               model: PJ.Model.Charity.create,
               view: PJ.View.charity_create
             },
             charity_show: {
               path: '/charities/:slug',
+              menu: 'Charities',
               model: PJ.Model.Charity.find,
               view: PJ.View.charity_show
             },
             charities_list: {
               path: '/charities',
+              menu: 'Charities',
               model: PJ.Model.Charity.find,
               view: PJ.View.charity_list
             },
             charity_volunteer: {
               path: '/volunteer/:slug',
+              menu: 'Volunteer',
               model: PJ.Model.Volunteer.find,
               view: PJ.View.charity_volunteer
             },
             volunteer_list: {
               path: '/volunteer',
+              menu: 'Volunteer',
               model: PJ.Model.Volunteer.find,
               view: PJ.View.volunteer_list
             },
             join: {
               path: '/join',
+              menu: 'Join',
               model: PJ.Model.User.create,
               view: PJ.View.join
             },
             faq: {
               path: '/faq',
+              menu: 'FAQ',
+              model: PJ.Model.Stat.find,
+              view: PJ.View.faq
+            },
+            settings: {
+              path: '/settings',
+              menu: 'Settings',
               model: PJ.Model.Stat.find,
               view: PJ.View.faq
             },
             home: {
               path: '/',
+              menu: 'FAQ',
               model: PJ.Model.Stat.find,
               view: PJ.View.faq
             }
@@ -70,11 +87,9 @@ PJ.register(
 
         for (var key in routing_table) {
           if(routing_table.hasOwnProperty(key)) {
-            var model = routing_table[key].model,
-                view  = routing_table[key].view,
-                path  = routing_table[key].path;
+            var path  = routing_table[key].path;
 
-            routes[path] = build_route_function(model, view);
+            routes[path] = build_route_function(routing_table[key]);
             paths[key] = path;
           } 
         }
@@ -85,19 +100,22 @@ PJ.register(
         };
       };
 
-      function build_route_function (model, view) {
+      function build_route_function (route) {
         return function () {
+          var model     = route.model,
+              view      = route.view,
+              menu_item = route.menu;
+
           $.when(model.apply(null, arguments),
                  PJ.Model.Stat.find()
            )
            .then(function(data, stat) {
-             var base_data = {
-                   get_route: get_route, 
-                   next_donee_slug: stat.data.donee_slug
-                 },
-                 view_data = view($.extend(base_data, data));
-
-             update_state(view_data);
+             var view_data = view({ get_route: get_route, 
+                                    next_donee_slug: stat.data.donee_slug,
+                                    data: data.data }),
+                 menu_data = {menu: PJ.View.menu(menu_item, stat.data.donee_slug, get_route)},
+                 new_state = $.extend({}, menu_data, view_data);
+             update_state(new_state);
            })
         };
       };
