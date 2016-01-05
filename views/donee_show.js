@@ -6,8 +6,11 @@ PJ.View.register(
         next_donee_slug = data.next_donee_slug,
         get = data.get_route;
 
-    return {
-      button_list: PJ.View.button_list([{ style: "primary",
+    return [
+      PJ.View.header("meet " + donee.name, donee.subtitle),
+      PJ.View.media(donee.media_url),
+      PJ.View.info(donee.summary, donee.content),
+      PJ.View.button_list([{ style: "primary",
                                        title: "Donate",
                                        type: "payment_button",
                                        subtitle: donee.raised + " of " + donee.goal + " per month raised"
@@ -20,10 +23,7 @@ PJ.View.register(
                                      { style: "default",
                                        link: get('donee_show', donee.next_slug),
                                        title: "Skip"
-                                     }]),
-      header: PJ.View.header("meet " + donee.name, donee.subtitle),
-      info: PJ.View.info(donee.summary, donee.content),
-      media: PJ.View.media(donee.media_url)
-    };
+                                     }])
+    ];
   }
 );

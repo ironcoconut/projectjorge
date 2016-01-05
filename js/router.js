@@ -110,13 +110,23 @@ PJ.register(
                  PJ.Model.Stat.find()
            )
            .then(function(data, stat) {
-             var view_data = view({ get_route: get_route, 
-                                    next_donee_slug: stat.data.donee_slug,
-                                    data: data.data }),
-                 menu_data = PJ.View.menu(menu_item, stat.data.donee_slug, get_route),
-                 footer_data = PJ.View.footer(menu_item, stat.data.donee_slug, get_route),
-                 new_state = $.extend({menu: menu_data, footer: footer_data}, view_data);
-             update_state(new_state);
+             var view_data,
+                 menu_data,
+                 footer_data,
+                 new_state = [];
+           
+             view_data = view({ get_route: get_route, 
+                                next_donee_slug: stat.data.donee_slug,
+                                data: data.data }),
+             menu_data = PJ.View.menu(menu_item, stat.data.donee_slug, get_route),
+             footer_data = PJ.View.footer(menu_item, stat.data.donee_slug, get_route),
+             new_state = [];
+           
+             new_state.push(menu_data);
+             Array.prototype.push.apply(new_state, view_data);
+             new_state.push(footer_data);
+
+             update_state({data: new_state});
            })
         };
       };

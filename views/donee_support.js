@@ -4,8 +4,9 @@ PJ.View.register(
     var donee = data.data,
         get_route = data.get_route,
         next_donee_slug = data.next_donee_slug;
-    return {
-      button_list: PJ.View.button_list([{ style: "primary",
+    return [
+      PJ.View.header("support" + donee.name, donee.subtitle),
+      PJ.View.button_list([{ style: "primary",
                                           link: "#/donate/" + donee.slug + "/support",
                                           title: "Facebook"
                                         },
@@ -16,8 +17,7 @@ PJ.View.register(
                                         { style: "secondary",
                                           link: "#/donate/" + donee.slug + "/support",
                                           title: "Email"
-                                        }]),
-      header: PJ.View.header("support" + donee.name, donee.subtitle)
-    };
+                                        }])
+    ];
   }
 );

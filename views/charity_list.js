@@ -14,9 +14,9 @@ PJ.View.register(
           };
         });
 
-    return {
-      button_list: PJ.View.button_list(buttons),
-      header: PJ.View.header("Charities", "who's helping to end homelessness")
-    };
+    return [
+      PJ.View.header("Charities", "who's helping to end homelessness"),
+      PJ.View.button_list(buttons)
+    ];
   }
 );

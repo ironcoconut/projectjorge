@@ -19,6 +19,9 @@ PJ.View.register(
           };
         });
 
-    return { "buttons": mapped_buttons};
+    return { 
+      "type": "button_list",
+      "buttons": mapped_buttons
+    };
   }
 );

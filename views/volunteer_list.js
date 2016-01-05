@@ -14,9 +14,9 @@ PJ.View.register(
           };
         });
 
-    return {
-      button_list: PJ.View.button_list(buttons),
-      header: PJ.View.header("Volunteer Positions", "lend a helping hand")
-    };
+    return [
+      PJ.View.header("Volunteer Positions", "lend a helping hand"),
+      PJ.View.button_list(buttons)
+    ];
   }
 );

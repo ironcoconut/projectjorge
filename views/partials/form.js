@@ -18,9 +18,10 @@ PJ.View.register(
         });
 
     return {
-      "submit_function": fn,
-      "message": msg,
-      "elements": mapped_elements
+      type: "form",
+      submit_function: fn,
+      message: msg,
+      elements: mapped_elements
     };
   }
 );

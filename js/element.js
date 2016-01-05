@@ -25,6 +25,7 @@ PJ.register(
           null;
       },
       render_object: function(name, object, key) {
+        if (!key) key = name;
         return object ? 
           React.createElement(elements[name], $.extend({key: key}, object)) : 
           null;

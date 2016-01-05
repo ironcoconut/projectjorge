@@ -9,11 +9,11 @@ PJ.View.register(
         content = "<p><a href='https://ironcoconut.github.io/projectjorge/#/donee/jorge-bergoglio' target='_blank'>View the demo.</a></p><p><a href='https://github.com/ironcoconut/projectjorge' target='_blank'>Visit project github page.</a></p>",
         message = "Thank you for joining our mailing list.";
 
-    return {
-      header: PJ.View.header("About Project Jorge"),
-      media: PJ.View.media("https://www.youtube.com/embed/wthBxLda20M"),
-      info: PJ.View.info(summary, content),
-      form: PJ.View.form(submit_function, message, elements)
-    };
+    return [
+      PJ.View.header("About Project Jorge"),
+      PJ.View.media("https://www.youtube.com/embed/wthBxLda20M"),
+      PJ.View.info(summary, content),
+      PJ.View.form(submit_function, message, elements)
+    ];
   }
 );

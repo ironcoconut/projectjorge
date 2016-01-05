@@ -6,9 +6,9 @@ PJ.View.register(
         get_route = data.get_route,
         next_donee_slug = data.next_donee_slug;
 
-    return {
-      header: PJ.View.header("Create an Account", "share good will with humankind"),
-      form: PJ.View.form(submit_function, "Thank you for joining", form_elements)
-    };
+    return [
+      PJ.View.header("Create an Account", "share good will with humankind"),
+      PJ.View.form(submit_function, "Thank you for joining", form_elements)
+    ];
   }
 );

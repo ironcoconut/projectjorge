@@ -5,8 +5,8 @@ PJ.View.register('charity_create', function(data) {
       get_route = data.get_route,
       next_donee_slug = data.next_donee_slug;
 
-  return {
-    header: View.header("Create a New Charity"),
-    form: View.form(submit_function, "Submit", form_elements)
-  };
+  return [
+    View.header("Create a New Charity"),
+    View.form(submit_function, "Submit", form_elements)
+  ];
 });

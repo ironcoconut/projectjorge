@@ -5,8 +5,11 @@ PJ.View.register(
         get_route = data.get_route,
         next_donee_slug = data.next_donee_slug;
 
-    return {
-      button_list: PJ.View.button_list([{ style: "primary",
+    return [
+      PJ.View.header(charity.name, charity.subtitle),
+      PJ.View.info(charity.summary, charity.content),
+      PJ.View.media(charity.media_url),
+      PJ.View.button_list([{ style: "primary",
                                           link: get_route("charity_volunteer", 
                                                           [charity.slug]),
                                           title: "Volunteer"
@@ -15,10 +18,7 @@ PJ.View.register(
                                           link: get_route("charity_show",
                                                           [charity.next_charity_slug]),
                                           title: "Next"
-                                        }]),
-      header: PJ.View.header(charity.name, charity.subtitle),
-      info: PJ.View.info(charity.summary, charity.content),
-      media: PJ.View.media(charity.media_url)
-    };
+                                        }])
+    ];
   }
 );

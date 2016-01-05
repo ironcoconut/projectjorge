@@ -2,8 +2,9 @@ PJ.View.register(
   'header', 
   function(title, subtitle) {
     return { 
-      "title": title,
-      "subtitle": subtitle
+      type: "header",
+      title: title,
+      subtitle: subtitle
     };
   }
 );

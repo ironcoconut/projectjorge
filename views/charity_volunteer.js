@@ -6,11 +6,11 @@ PJ.View.register(
         next_donee_slug = data.next_donee_slug,
         form_elements = data.elements;
 
-    return {
-      header: PJ.View.header(job.title, job.charity_name),
-      info: PJ.View.info(job.summary, job.description),
-      media: PJ.View.media(job.media_url),
-      form: PJ.View.form(data.submit_function, "Thank you for volunteering", form_elements)
-    };
+    return [
+      PJ.View.header(job.title, job.charity_name),
+      PJ.View.media(job.media_url),
+      PJ.View.info(job.summary, job.description),
+      PJ.View.form(data.submit_function, "Thank you for volunteering", form_elements)
+    ];
   }
 );

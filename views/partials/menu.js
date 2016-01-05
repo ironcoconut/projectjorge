@@ -28,6 +28,9 @@ PJ.View.register(
           }
         });
 
-    return { items: items };
+    return { 
+      type: "menu",
+      items: items 
+    };
   }
 );

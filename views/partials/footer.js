@@ -13,6 +13,9 @@ PJ.View.register(
       name_arr.push(data);
     });
 
-    return { items: name_arr };
+    return { 
+      type: "footer",
+      items: name_arr 
+    };
   }
 );
