@@ -3,18 +3,14 @@ PJ.View.register(
   function(name, next_donee, get) {
     var paths = {
           'FAQ': get('faq'), 
-          'Donate': get('donee_show', next_donee), 
-          'Volunteer': get('volunteer_list'), 
-          'Join': get('join'), 
           'Charities': get('charities_list')
         },
-        items = ['FAQ', 'Donate', 'Volunteer', 'Join', 'Charities'],
+        items = ['FAQ', 'Charities'],
         name_arr = [];
 
     items.forEach(function(item){
-      if (item != name) {
-        name_arr.push({label: item, path: paths[item]});
-      }
+      var data = (item === name) ? {label: item} : {label: item, path: paths[item]};
+      name_arr.push(data);
     });
 
     return { items: name_arr };

@@ -17,7 +17,6 @@ PJ.View.register(
                                           link: "#/donate/" + donee.slug + "/support",
                                           title: "Email"
                                         }]),
-      footer: PJ.View.footer("Donate", next_donee_slug, get_route),
       header: PJ.View.header("support" + donee.name, donee.subtitle)
     };
   }

@@ -113,8 +113,9 @@ PJ.register(
              var view_data = view({ get_route: get_route, 
                                     next_donee_slug: stat.data.donee_slug,
                                     data: data.data }),
-                 menu_data = {menu: PJ.View.menu(menu_item, stat.data.donee_slug, get_route)},
-                 new_state = $.extend({}, menu_data, view_data);
+                 menu_data = PJ.View.menu(menu_item, stat.data.donee_slug, get_route),
+                 footer_data = PJ.View.footer(menu_item, stat.data.donee_slug, get_route),
+                 new_state = $.extend({menu: menu_data, footer: footer_data}, view_data);
              update_state(new_state);
            })
         };

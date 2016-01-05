@@ -16,7 +16,6 @@ PJ.View.register(
 
     return {
       button_list: PJ.View.button_list(buttons),
-      footer: PJ.View.footer("Charities", next_donee_slug, get_route),
       header: PJ.View.header("Charities", "who's helping to end homelessness")
     };
   }

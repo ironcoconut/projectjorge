@@ -16,7 +16,6 @@ PJ.View.register(
                                                           [charity.next_charity_slug]),
                                           title: "Next"
                                         }]),
-      footer: PJ.View.footer("Charities", next_donee_slug, get_route),
       header: PJ.View.header(charity.name, charity.subtitle),
       info: PJ.View.info(charity.summary, charity.content),
       media: PJ.View.media(charity.media_url)

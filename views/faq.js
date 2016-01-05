@@ -19,7 +19,6 @@ PJ.View.register(
                                        title: "Help Local Charities",
                                        subtitle: stats.total_charities + " Houston Charities Need Volunteers."
                                      }]),
-      footer: PJ.View.footer("FAQ", next_donee_slug, get_route),
       header: PJ.View.header("FAQ", "about our mission and inspiration"),
       info: PJ.View.info(summary, content),
       media: PJ.View.media(stats.media_url)

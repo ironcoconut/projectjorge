@@ -10,7 +10,6 @@ PJ.View.register(
         message = "Thank you for joining our mailing list.";
 
     return {
-      footer: PJ.View.footer("Mailinglist", next_donee_slug, get_route),
       header: PJ.View.header("About Project Jorge"),
       media: PJ.View.media("https://www.youtube.com/embed/wthBxLda20M"),
       info: PJ.View.info(summary, content),

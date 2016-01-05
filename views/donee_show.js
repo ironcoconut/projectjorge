@@ -21,7 +21,6 @@ PJ.View.register(
                                        link: get('donee_show', donee.next_slug),
                                        title: "Skip"
                                      }]),
-      footer: PJ.View.footer("Donate", next_donee_slug, get_route),
       header: PJ.View.header("meet " + donee.name, donee.subtitle),
       info: PJ.View.info(donee.summary, donee.content),
       media: PJ.View.media(donee.media_url)

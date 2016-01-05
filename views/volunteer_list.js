@@ -16,7 +16,6 @@ PJ.View.register(
 
     return {
       button_list: PJ.View.button_list(buttons),
-      footer: PJ.View.footer("Volunteer", next_donee_slug, get_route),
       header: PJ.View.header("Volunteer Positions", "lend a helping hand")
     };
   }

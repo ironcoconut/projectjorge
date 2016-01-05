@@ -6,9 +6,15 @@ PJ.Element.register(
           children = [];
       
       items.forEach(function (item, i) {
-        children.push(React.createElement('a', 
-                                          {href: item.path, key: item.label}, 
-                                          item.label));
+        if (item.path) {
+          children.push(React.createElement('a', 
+                                            {href: item.path, key: item.label}, 
+                                            item.label));
+        } else {
+          children.push(React.createElement('span', 
+                                            {key: item.label}, 
+                                            item.label));
+        }
         
         if (i < items.length - 1) {
           children.push(React.createElement('span', 
