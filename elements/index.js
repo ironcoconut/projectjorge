@@ -6,6 +6,7 @@ PJ.Element.register(
     },
     render: function() {
       return React.createElement('div', {className: 'container'},
+               PJ.Element.render_property('menu', {menu: true}),
                PJ.Element.render_property('header', this.state),
                PJ.Element.render_property('media', this.state),
                PJ.Element.render_property('info', this.state),
